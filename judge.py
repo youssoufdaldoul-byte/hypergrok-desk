@@ -4,10 +4,12 @@ from fastapi import FastAPI, Header, HTTPException
 from pydantic import BaseModel
 from typesafe_sdk import AsyncTypeSafeClient
 from questions import SETS
+from book_api import router as book_router
 
 DESK_SECRET = os.environ["DESK_SECRET"]     # for the bots. NOT the TypeSafe key.
 client = AsyncTypeSafeClient()              # reads TYPESAFE_API_KEY itself
 app = FastAPI()
+app.include_router(book_router)       # POST /release, RISK only
 
 
 class Ask(BaseModel):

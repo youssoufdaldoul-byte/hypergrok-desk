@@ -79,3 +79,16 @@ must sum to 1, model must be a version string. If any of the three slips, stop t
 
 Jev picks what the desk holds. Grok Bot decides how much and how long. The exit rule answers to neither:
 one comparison on two numbers the desk already has, same result every time.
+
+## Book (`book.py`, `book_api.py`)
+
+Creates `desk.db` on first import. One position at a time; a held position means no scan at all.
+Bench on the failed check, not on the token: the reason sets the length. Every refusal is also kept in `rejection`.
+RISK CALLS release() AND NOBODY ELSE DOES. RISK lives in xAI's cloud, so its door is `POST /release`
+on the judge's tunnel, with `RISK_SECRET` (held by the RISK seat only, not `DESK_SECRET`).
+
+## Shift (`main.py`)
+
+The process that never stops. Start with `shadow=True` and leave it that way for a week.
+GeckoTerminal budget: 6 calls for `universe()` + 3 dossiers. Want more dossiers: `universe(pages=1)`.
+Judge failure (422 or unreachable) stands the desk down for the cycle; it never falls back to guessing.

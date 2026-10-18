@@ -130,6 +130,3 @@ def PICK(state):
 
 SETS = {"market": MARKET, "social": SOCIAL, "pick": PICK,
         "solana": CHAIN_SOLANA, "bsc": CHAIN_BSC, "robinhood": CHAIN_ROBINHOOD}
-
-# chain set routing, in code. net id -> SETS key. Base reads the BSC set.
-CHAIN_SET = {1399811149: "solana", 56: "bsc", 8453: "bsc", 4663: "robinhood"}

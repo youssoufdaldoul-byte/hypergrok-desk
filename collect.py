@@ -20,6 +20,8 @@ def gt_get(path: str, **params) -> dict:
         time.sleep(wait)
     _gt_last = time.monotonic()
     r = requests.get(f"{GT}{path}", params=params, timeout=20)
+    if r.status_code == 429:                    # over 10/min: next call waits a full minute
+        _gt_last = time.monotonic() + 60 - GT_GAP
     r.raise_for_status()                        # a 429 body has no "data"; fail loudly, not with a KeyError
     return r.json()
 
@@ -87,7 +89,7 @@ def shortlist(fomo: Fomo, ids: list[str]) -> list[dict]:
 
 
 NO_TRADES = {"buys_h1": None, "sells_h1": None, "buys_h6": None, "sells_h6": None,
-             "trades_h24": None}
+             "trades_h24": None, "volume_h1": None, "volume_h6": None}
 
 
 def trade_counts(t: dict) -> dict:
@@ -98,10 +100,13 @@ def trade_counts(t: dict) -> dict:
         pairs = requests.get(f"{DEX}/{t['addr']}", timeout=20).json().get("pairs") or []
         if not pairs:
             return dict(NO_TRADES)
-        x = max(pairs, key=lambda p: (p.get("liquidity") or {}).get("usd") or 0)["txns"]
+        p = max(pairs, key=lambda p: (p.get("liquidity") or {}).get("usd") or 0)
+        x, v = p["txns"], p.get("volume") or {}
+        # volume_h6 is what RISK's exit ratio reads; h1/h6 let shape see "fading"
         return {"buys_h1": x["h1"]["buys"], "sells_h1": x["h1"]["sells"],
                 "buys_h6": x["h6"]["buys"], "sells_h6": x["h6"]["sells"],
-                "trades_h24": x["h24"]["buys"] + x["h24"]["sells"]}
+                "trades_h24": x["h24"]["buys"] + x["h24"]["sells"],
+                "volume_h1": v.get("h1"), "volume_h6": v.get("h6")}
     except Exception:
         return dict(NO_TRADES)
 

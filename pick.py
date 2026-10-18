@@ -55,7 +55,7 @@ def pick(judge, survivors) -> dict | None:
     if not survivors:
         return None
     if len(survivors) == 1:              # a choice over one option is fake confidence.
-        return order(*survivors[0])      # it already cleared SOFT: straight to the bot.
+        return order(*survivors[0], model="single-survivor")   # cleared SOFT: straight to the bot.
 
     keys = labels(survivors)
     state = {"candidates": [{"ticker": k, "summary": summary(d, a)}
