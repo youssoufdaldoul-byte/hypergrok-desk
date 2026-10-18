@@ -26,3 +26,12 @@ cloudflared tunnel --url http://localhost:8080  # bots run in xAI's cloud, not o
 - ARITHMETIC STAYS IN CODE. Compute it, pass the result in as a field.
 - 401 bad key, 422 bad question, 429 rate limit, 529 overloaded. Back off on 429 and 529.
   Never retry a 422.
+
+## Collector (`collect.py`)
+
+Jev fetches nothing. SCAN owns the universe and the shortlist, VET pulls the dossier.
+
+- NEVER invent a number. A field that came back null stays null and the question sees it.
+- NEVER let null mean fine. Missing data gets its own option and its own consequence.
+- NEVER pull a dossier for a token stage 2 killed. That is a wasted rate limit slot.
+- Every GeckoTerminal call goes through `gt_get` (one call per 6s = 10/min).
