@@ -35,3 +35,12 @@ Jev fetches nothing. SCAN owns the universe and the shortlist, VET pulls the dos
 - NEVER let null mean fine. Missing data gets its own option and its own consequence.
 - NEVER pull a dossier for a token stage 2 killed. That is a wasted rate limit slot.
 - Every GeckoTerminal call goes through `gt_get` (one call per 6s = 10/min).
+
+## Questions (`questions.py`)
+
+Every question the desk can ask lives here and nowhere else. `judge.py` imports `SETS`.
+
+- ROUTE THE CHAIN SET IN CODE. `CHAIN_SET[net]` picks the set written for that chain's evidence.
+- `data_coverage` IS A REAL QUESTION. `dark` does not mean skip, it means cut the ticket.
+- THE PICK NEEDS `worth_trading_at_all` NEXT TO IT. Choice is relative, noul is the absolute gate.
+- THE SUMMARY IN `candidates` IS TWO LINES, assembled in code from answers already given.
