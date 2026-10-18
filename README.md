@@ -74,3 +74,8 @@ CHIEF runs it. The only call that sees more than one token at once.
 `order_flow.md` is what CHIEF posts and the fixed sequence SIZE -> FILLS -> RISK -> CHIEF works it in.
 Run `scripts/smoke_judge.sh` from a bot's terminal: choice must be one of the options, probabilities
 must sum to 1, model must be a version string. If any of the three slips, stop there.
+
+## Execution seats (`prompts/size.md`, `prompts/fills.md`, `prompts/risk.md`)
+
+Jev picks what the desk holds. Grok Bot decides how much and how long. The exit rule answers to neither:
+one comparison on two numbers the desk already has, same result every time.
