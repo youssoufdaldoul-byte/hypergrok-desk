@@ -52,3 +52,9 @@ Retune the desk by editing `thresholds.py` and nothing else. `filter.py` is the 
 `chain_kill` (one GeckoTerminal slot, max 3) -> `soft_kill` (one judgement, a handful).
 Facts kill before judgements. Log every rejection with the check that fired.
 Fewer than ten rejections a day means the filter is misconfigured, not the market.
+
+## SOCIAL seat (`prompts/social.md`)
+
+A prompt, not a file the desk runs. The handle comes off the chain, already cleaned by the collector.
+Never let the seat go looking for "the project's Twitter": it will find a fan account and be confident.
+No handle means no social read, and the token carries that as a hole (`NO_SOCIAL_CUT`), not a pass.
