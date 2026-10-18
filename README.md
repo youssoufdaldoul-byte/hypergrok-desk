@@ -58,3 +58,12 @@ Fewer than ten rejections a day means the filter is misconfigured, not the marke
 A prompt, not a file the desk runs. The handle comes off the chain, already cleaned by the collector.
 Never let the seat go looking for "the project's Twitter": it will find a fan account and be confident.
 No handle means no social read, and the token carries that as a hole (`NO_SOCIAL_CUT`), not a pass.
+
+## Pick (`pick.py`)
+
+CHIEF runs it. The only call that sees more than one token at once.
+
+- NEVER re-rank the winner. Disagree with a threshold, not with the pick.
+- NEVER run pick on one survivor. One survivor already cleared SOFT and goes straight to the bot.
+- NEVER skip `worth_trading_at_all`. Choice settles which, the noul settles whether today is a day.
+- No trade is a result. Log it with the reason, send it to Telegram, wait for the next cycle.
