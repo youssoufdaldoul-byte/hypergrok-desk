@@ -67,3 +67,10 @@ CHIEF runs it. The only call that sees more than one token at once.
 - NEVER run pick on one survivor. One survivor already cleared SOFT and goes straight to the bot.
 - NEVER skip `worth_trading_at_all`. Choice settles which, the noul settles whether today is a day.
 - No trade is a result. Log it with the reason, send it to Telegram, wait for the next cycle.
+
+## Handoff (`prompts/handoff.md`, `prompts/order_flow.md`, `scripts/smoke_judge.sh`)
+
+`handoff.md` goes above every judging seat (SCAN, VET, SOCIAL, CHIEF); save it once as a shared skill.
+`order_flow.md` is what CHIEF posts and the fixed sequence SIZE -> FILLS -> RISK -> CHIEF works it in.
+Run `scripts/smoke_judge.sh` from a bot's terminal: choice must be one of the options, probabilities
+must sum to 1, model must be a version string. If any of the three slips, stop there.
