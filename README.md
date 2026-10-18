@@ -44,3 +44,11 @@ Every question the desk can ask lives here and nowhere else. `judge.py` imports 
 - `data_coverage` IS A REAL QUESTION. `dark` does not mean skip, it means cut the ticket.
 - THE PICK NEEDS `worth_trading_at_all` NEXT TO IT. Choice is relative, noul is the absolute gate.
 - THE SUMMARY IN `candidates` IS TWO LINES, assembled in code from answers already given.
+
+## Filter (`thresholds.py` + `filter.py`)
+
+Retune the desk by editing `thresholds.py` and nothing else. `filter.py` is the order they fire in:
+`free_kill` (no network, hundreds) -> `trade_kill` (one DexScreener call, tens) ->
+`chain_kill` (one GeckoTerminal slot, max 3) -> `soft_kill` (one judgement, a handful).
+Facts kill before judgements. Log every rejection with the check that fired.
+Fewer than ten rejections a day means the filter is misconfigured, not the market.
