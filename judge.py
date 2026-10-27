@@ -5,11 +5,13 @@ from pydantic import BaseModel
 from typesafe_sdk import AsyncTypeSafeClient
 from questions import SETS
 from book_api import router as book_router
+from desk_ui import router as desk_router
 
 DESK_SECRET = os.environ["DESK_SECRET"]     # for the bots. NOT the TypeSafe key.
 client = AsyncTypeSafeClient()              # reads TYPESAFE_API_KEY itself
 app = FastAPI()
 app.include_router(book_router)       # POST /release, RISK only
+app.include_router(desk_router)       # GET /desk, the team's screen
 
 
 class Ask(BaseModel):

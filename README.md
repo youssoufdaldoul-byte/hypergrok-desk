@@ -92,3 +92,21 @@ on the judge's tunnel, with `RISK_SECRET` (held by the RISK seat only, not `DESK
 The process that never stops. Start with `shadow=True` and leave it that way for a week.
 GeckoTerminal budget: 6 calls for `universe()` + 3 dossiers. Want more dossiers: `universe(pages=1)`.
 Judge failure (422 or unreachable) stands the desk down for the cycle; it never falls back to guessing.
+
+## Screen (`desk_ui.py`, `desk/index.html`)
+
+The team's screen, 24/7, served by the judge at `<tunnel>/desk#k=<DESK_VIEW_KEY>`. Same look as `design/`.
+
+- IT FOLLOWS THE DESK. A held position (book) drives the token panel; with Following off, or when flat,
+  it shows the team's pick from "Changer de token". Switch either and price, MC, candles and gates follow
+  on the next poll (5s). Nobody edits the page to change coin.
+- PRICE FROM DEXSCREENER, CANDLES FROM GECKOTERMINAL. Candles are price x supply, so the chart reads MC.
+  The screen spends one GT call per `DESK_GT_GAP` seconds (default 30) and serves stale candles between:
+  the shift's budget comes first.
+- GATES ARE THE REAL `HARD`, run live on the screen's token. Null shows `···`, never PASS.
+  `thresholds.py` on the screen is the file itself, not a copy.
+- SEATS FEED THE SCREEN, the screen feeds nothing. With `DESK_SECRET`:
+  `POST /desk/feed {"seat": "scan|vet|social|size|fills|risk|chief", "text": "..."}` (last seven shown),
+  `POST /desk/holding {"name", "address", "entry_mcap_usd", "value_usd"}` from FILLS after a fill,
+  `value_usd: null` from RISK after the close.
+- THE VIEW KEY READS AND SWITCHES TOKEN. It cannot post to the feed, touch the book or release anything.
