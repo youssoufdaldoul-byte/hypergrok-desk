@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>FOMO Trading Desk</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#1d8ff0}
+a{color:#5fd4ff}a:hover{color:#9ee6ff}
+button{font-family:inherit;cursor:pointer}
+</style>
+</helmet>
+<div style="min-height: 100vh; box-sizing: border-box; padding: 20px; background: #1d8ff0; font-family: Inter, system-ui, sans-serif; color: #e6eeff; display: flex; flex-wrap: wrap; gap: 20px; align-items: stretch">
+
+  <!-- ============ LEFT : TOKEN PANEL ============ -->
+  <section aria-label="Token GTA" style="flex: 1 1 380px; max-width: 460px; min-width: 0; box-sizing: border-box; background: #0a1431; border-radius: 26px; padding: 22px 22px 20px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 0 0 1px rgba(120,180,255,.18) inset">
+
+    <!-- header -->
+    <div style="display: flex; align-items: center; gap: 12px">
+      <button aria-label="Retour" style="background: none; border: 0; color: #6f86b8; padding: 0; width: 20px; height: 44px; display: flex; align-items: center">
+        <svg width="10" height="16" viewBox="0 0 10 16" aria-hidden="true"><path d="M8 2 L2 8 L8 14" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"></path></svg>
+      </button>
+      <div style="width: 52px; height: 52px; border-radius: 50%; background: #2a3f7a; flex: none; overflow: hidden; display: flex; align-items: flex-end; justify-content: center; box-shadow: 0 0 0 2px #1c2c5c">
+        <svg width="52" height="52" viewBox="0 0 52 52" aria-hidden="true">
+          <rect x="0" y="0" width="52" height="52" fill="#3b5bab"></rect>
+          <ellipse cx="26" cy="22" rx="10" ry="11" fill="#f2c39b"></ellipse>
+          <path d="M15 18 Q16 8 27 9 Q38 9 37 19 Q33 13 26 14 Q19 14 15 18 Z" fill="#f4d27a"></path>
+          <path d="M8 52 Q10 36 26 35 Q42 36 44 52 Z" fill="#1b1f33"></path>
+          <path d="M23 36 L26 46 L29 36 Z" fill="#e33a3a"></path>
+        </svg>
+      </div>
+      <div style="min-width: 0; flex: 1">
+        <div style="display: flex; align-items: center; gap: 8px">
+          <span style="font-size: 22px; font-weight: 700; letter-spacing: .3px; color: #f2f6ff">GTA</span>
+          <svg width="16" height="14" viewBox="0 0 16 14" aria-hidden="true"><path d="M1 2 H15 M1 7 H15 M1 12 H15" style="stroke: #4c629a; stroke-width: 2; stroke-linecap: round"></path></svg>
+          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 2 L14 6 L8 12 L4 12 L4 8 Z" style="fill: #7f95c9"></path><path d="M3 13 L1 15" style="stroke: #7f95c9; stroke-width: 2; stroke-linecap: round"></path></svg>
+        </div>
+        <div style="font-size: 13px; color: #6e83b4; display: flex; align-items: center; gap: 6px">Grand Trump Agency
+          <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><rect x="1" y="3" width="7" height="8" rx="1.5" style="fill: none; stroke: #4c629a; stroke-width: 1.4"></rect><path d="M4 3 V1.5 H11 V9 H8" style="fill: none; stroke: #4c629a; stroke-width: 1.4"></path></svg>
+        </div>
+      </div>
+      <div style="display: flex; gap: 4px; color: #5c74ad">
+        <button aria-label="Historique" style="background: none; border: 0; color: inherit; width: 40px; height: 44px; display: grid; place-items: center"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M3.5 11 A7.5 7.5 0 1 0 6 5.4" style="fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round"></path><path d="M2.5 3.5 V7 H6" style="fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round"></path><path d="M11 7 V11 L14 13" style="fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round"></path></svg></button>
+        <button aria-label="Favori" style="background: none; border: 0; color: inherit; width: 40px; height: 44px; display: grid; place-items: center"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M11 2.5 L13.6 8 L19.5 8.6 L15 12.6 L16.3 18.5 L11 15.4 L5.7 18.5 L7 12.6 L2.5 8.6 L8.4 8 Z" style="fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linejoin: round"></path></svg></button>
+        <button aria-label="Partager" style="background: none; border: 0; color: inherit; width: 40px; height: 44px; display: grid; place-items: center"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M7 8 H4.5 V19 H17.5 V8 H15" style="fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linejoin: round"></path><path d="M11 13 V2.5 M7.5 6 L11 2.5 L14.5 6" style="fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round"></path></svg></button>
+      </div>
+    </div>
+
+    <!-- price + market cap -->
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-top: 6px">
+      <div>
+        <div style="font-size: 36px; font-weight: 600; letter-spacing: -.5px; color: #ff5e57; line-height: 1.1">$0.000182</div>
+        <div style="font-size: 13px; color: #34c98a; margin-top: 4px">+$0.0000569 (+45.62%)</div>
+      </div>
+      <div style="text-align: right">
+        <div style="font-size: 26px; font-weight: 700; color: #f2f6ff; display: flex; align-items: center; gap: 6px; justify-content: flex-end">
+          <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="4.5" style="fill: none; stroke: #8aa0d6; stroke-width: 1.6"></circle></svg>$181.6K</div>
+        <div style="font-size: 15px; color: #b9c8ee; margin-top: 2px">Market cap</div>
+      </div>
+    </div>
+
+    <!-- candle chart -->
+    <div style="position: relative; flex: 1 1 300px; min-height: 280px">
+      <div style="position: absolute; inset: 0 70px 0 0">
+        <sc-for list="{{candles}}" as="c" hint-placeholder-count="20">
+          <div style="position: absolute; left: {{c.wl}}%; top: {{c.wt}}%; width: 2px; height: {{c.wh}}%; background: {{c.color}}"></div>
+          <div style="position: absolute; left: {{c.l}}%; top: {{c.t}}%; width: 2.2%; height: {{c.h}}%; min-height: 2px; border-radius: 1px; background: {{c.color}}"></div>
+        </sc-for>
+      </div>
+      <div style="position: absolute; right: 0; top: calc(17.9% - 12px); background: #ff5a5f; color: #fff; font-size: 13px; font-weight: 600; padding: 4px 9px; border-radius: 6px">$172.4K</div>
+    </div>
+
+    <!-- timeframe -->
+    <div style="display: flex; align-items: center; gap: 4px; justify-content: center">
+      <sc-for list="{{tfs}}" as="t" hint-placeholder-count="4">
+        <button onClick="{{t.pick}}" aria-pressed="{{t.on}}" style="background: none; border: 0; height: 44px; padding: 0 12px; font-size: 15px; font-weight: {{t.weight}}; color: {{t.color}}; display: flex; align-items: center; gap: 4px">{{t.label}}<sc-if value="{{t.live}}" hint-placeholder-val="{{ false }}"><span style="width: 5px; height: 5px; border-radius: 50%; background: #34c98a; display: inline-block"></span></sc-if></button>
+      </sc-for>
+      <button aria-label="Indicateurs" style="background: none; border: 0; width: 44px; height: 44px; color: #5fb4ff; display: grid; place-items: center; margin-left: 14px"><svg width="26" height="20" viewBox="0 0 26 20" aria-hidden="true"><path d="M1 11 H7 L10 3 L15 17 L18 9 H25" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"></path></svg></button>
+      <button aria-label="Réglages du graphique" style="background: none; border: 0; width: 44px; height: 44px; color: #5fb4ff; display: grid; place-items: center"><svg width="22" height="20" viewBox="0 0 22 20" aria-hidden="true"><path d="M1 4 H9 M15 4 H21 M1 15 H5 M11 15 H21" style="stroke: currentColor; stroke-width: 2; stroke-linecap: round"></path><circle cx="12" cy="4" r="2.6" style="fill: none; stroke: currentColor; stroke-width: 2"></circle><circle cx="8" cy="15" r="2.6" style="fill: none; stroke: currentColor; stroke-width: 2"></circle></svg></button>
+    </div>
+
+    <!-- tabs -->
+    <div role="tablist" style="display: flex; border-bottom: 1px solid #1c2a55">
+      <sc-for list="{{tabs}}" as="t" hint-placeholder-count="3">
+        <button role="tab" aria-selected="{{t.on}}" onClick="{{t.pick}}" style="flex: 1; background: none; border: 0; height: 48px; font-size: 17px; font-weight: {{t.weight}}; color: {{t.color}}; box-shadow: {{t.bar}}">{{t.label}}</button>
+      </sc-for>
+    </div>
+
+    <sc-if value="{{tabHolders}}" hint-placeholder-val="{{ true }}">
+      <div style="display: flex; flex-direction: column; gap: 14px">
+        <label style="display: flex; align-items: center; gap: 12px; font-size: 16px; color: #dce6ff; min-height: 44px; cursor: pointer">
+          <button onClick="{{toggleFollow}}" role="switch" aria-checked="{{following}}" aria-label="Following" style="width: 44px; height: 26px; border-radius: 13px; border: 0; background: {{followTrack}}; position: relative; padding: 0">
+            <span style="position: absolute; top: 3px; left: {{followKnob}}px; width: 20px; height: 20px; border-radius: 50%; background: #eef3ff"></span>
+          </button>
+          Following
+        </label>
+        <button style="display: flex; align-items: center; gap: 10px; height: 54px; border-radius: 16px; border: 1px solid #263a72; background: #13214a; color: #9cc4ff; font-size: 17px; font-weight: 600; padding: 0 18px; text-align: left">
+          <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><circle cx="13" cy="7" r="4" style="fill: none; stroke: currentColor; stroke-width: 2"></circle><path d="M10 10 L3 17 M5 15 L7 17" style="stroke: currentColor; stroke-width: 2; stroke-linecap: round"></path></svg>
+          <span style="flex: 1">Claim your team tag</span>
+          <svg width="8" height="14" viewBox="0 0 8 14" aria-hidden="true"><path d="M1.5 1.5 L6.5 7 L1.5 12.5" style="fill: none; stroke: #6f86b8; stroke-width: 2; stroke-linecap: round"></path></svg>
+        </button>
+        <div style="display: flex; align-items: center; gap: 14px; padding-top: 6px">
+          <div style="width: 44px; height: 44px; border-radius: 50%; background: #c9a77a; flex: none"></div>
+          <div style="flex: 1; min-width: 0">
+            <div style="font-size: 20px; font-weight: 600; color: #f2f6ff">astronutzz</div>
+            <div style="font-size: 14px; color: #9fb0d8">Avg. entry: $131.6K MC</div>
+          </div>
+          <div style="text-align: right">
+            <div style="font-size: 21px; font-weight: 600; color: #f2f6ff">$498.59</div>
+            <div style="font-size: 14px; color: #34c98a">▲ 37.97%</div>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px">
+          <div style="width: 44px; height: 44px; border-radius: 50%; background: #2c4f8c; flex: none"></div>
+          <div style="flex: 1; font-size: 20px; font-weight: 600; color: #f2f6ff">thinker77</div>
+          <div style="font-size: 21px; font-weight: 600; color: #f2f6ff">$112.21</div>
+        </div>
+      </div>
+    </sc-if>
+    <sc-if value="{{tabFeed}}" hint-placeholder-val="{{ false }}">
+      <div style="display: flex; flex-direction: column; gap: 12px; font-size: 15px; color: #c9d6f7">
+        <div>astronutzz a acheté <strong style="color: #34c98a">$498.59</strong> à $131.6K MC · 22 min</div>
+        <div>thinker77 a acheté <strong style="color: #34c98a">$112.21</strong> à $164.0K MC · 9 min</div>
+      </div>
+    </sc-if>
+    <sc-if value="{{tabAbout}}" hint-placeholder-val="{{ false }}">
+      <div style="font-size: 15px; line-height: 1.5; color: #c9d6f7">Grand Trump Agency (GTA) — [DESCRIPTION DU TOKEN]. Contrat : [ADRESSE].</div>
+    </sc-if>
+
+    <div style="flex: 1"></div>
+    <div style="display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 16px; color: #b9c8ee">
+      <svg width="18" height="16" viewBox="0 0 18 16" aria-hidden="true"><path d="M9 1.5 L17 14.5 H1 Z" style="fill: #b9c8ee"></path><rect x="8.2" y="6" width="1.6" height="4.5" fill="#0a1431"></rect><rect x="8.2" y="11.6" width="1.6" height="1.6" fill="#0a1431"></rect></svg>
+      Unverified token
+      <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5" style="fill: none; stroke: #b9c8ee; stroke-width: 1.4"></circle><path d="M8 7 V11.5 M8 4.5 V5" style="stroke: #b9c8ee; stroke-width: 1.6; stroke-linecap: round"></path></svg>
+    </div>
+    <div style="display: flex; gap: 12px">
+      <button style="flex: 1; height: 62px; border-radius: 18px; border: 0; background: #33c4e8; color: #0b3f5a; font-size: 20px; font-weight: 700">Buy</button>
+      <button aria-label="Achat instantané" style="width: 62px; height: 62px; border-radius: 18px; border: 0; background: #1a2f63; color: #7fd8ff; display: grid; place-items: center"><svg width="20" height="26" viewBox="0 0 20 26" aria-hidden="true"><path d="M12 1 L2 15 H9 L7 25 L18 10 H11 Z" style="fill: currentColor"></path></svg></button>
+    </div>
+  </section>
+
+  <!-- ============ RIGHT COLUMN ============ -->
+  <div style="flex: 999 1 640px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+
+    <!-- SCENE : bot office -->
+    <section aria-label="Bureau des bots" style="background: #070d22; border-radius: 26px; overflow: hidden; box-shadow: 0 0 0 1px rgba(120,180,255,.18) inset">
+      <svg viewBox="0 0 960 600" style="display: block; width: 100%; height: auto" role="img" aria-label="Bureau isométrique : six bots à leurs postes, Grok Bot, mur de trading, broyeur Paper Hands, trophée Top Runner et Whale Radar">
+        <defs>
+          <g id="jj">
+            <path d="M4 4 H20 V22 A9 9 0 0 1 2 22" style="fill: none; stroke: #eaf4ff; stroke-width: 6; stroke-linecap: round"></path>
+            <path d="M18 4 H34 V22 A9 9 0 0 1 16 22" style="fill: none; stroke: #6fd6ff; stroke-width: 6; stroke-linecap: round"></path>
+          </g>
+        </defs>
+        <!-- room -->
+        <rect x="0" y="0" width="960" height="600" fill="#060b1d"></rect>
+        <polygon points="0,250 960,250 960,600 0,600" fill="#0a1330"></polygon>
+        <line x1="0" y1="250" x2="960" y2="250" style="stroke: #1d3a7a; stroke-width: 2"></line>
+        <!-- floor grid -->
+        <g style="stroke: #102050; stroke-width: 1">
+          <line x1="0" y1="320" x2="960" y2="320"></line><line x1="0" y1="400" x2="960" y2="400"></line><line x1="0" y1="480" x2="960" y2="480"></line>
+          <line x1="0" y1="560" x2="960" y2="560"></line><line x1="300" y1="250" x2="110" y2="600"></line><line x1="480" y1="250" x2="480" y2="600"></line><line x1="660" y1="250" x2="850" y2="600"></line>
+        </g>
+
+        <!-- wall chart -->
+        <polyline points="250,215 290,200 320,206 350,170 380,182 410,140 440,152 470,120 500,128 530,96 560,108 600,74 640,90 690,60" style="fill: none; stroke: #2a6fd6; stroke-width: 2; opacity: .55"></polyline>
+        <g style="opacity: .6">
+          <rect x="560" y="70" width="5" height="22" fill="#2fd18b"></rect><rect x="575" y="80" width="5" height="18" fill="#ff5a5f"></rect>
+          <rect x="590" y="64" width="5" height="26" fill="#2fd18b"></rect><rect x="605" y="72" width="5" height="14" fill="#ff5a5f"></rect>
+          <rect x="620" y="56" width="5" height="24" fill="#2fd18b"></rect>
+        </g>
+
+        <!-- FOMO logo -->
+        <use href="#jj" transform="translate(64,58) scale(1.6)"></use>
+        <text x="72" y="150" style="font: 600 18px 'JetBrains Mono', monospace; letter-spacing: 6px; fill: #dfeaff">FOMO</text>
+        <use href="#jj" transform="translate(286,90) scale(.8)"></use>
+        <use href="#jj" transform="translate(855,110) scale(.8)"></use>
+
+        <!-- hanging frames -->
+        <path d="M268 40 V120 Q268 150 298 150 Q328 150 328 120 V40" style="fill: none; stroke: #1a2e63; stroke-width: 3"></path>
+        <path d="M840 40 V140 Q840 170 870 170 Q900 170 900 140 V40" style="fill: none; stroke: #1a2e63; stroke-width: 3"></path>
+
+        <!-- ticker -->
+        <text x="520" y="232" style="font: 500 10px 'JetBrains Mono', monospace; letter-spacing: 1.5px; fill: #6d86c4; text-anchor: middle">BOTS P&amp;L +$0.00 · GTA MC $181.6K · HOLDERS 710</text>
+
+        <!-- Grok bot (boss) -->
+        <g transform="translate(800,175)">
+          <rect x="-20" y="28" width="150" height="10" rx="3" fill="#13224d"></rect>
+          <rect x="-12" y="38" width="4" height="22" fill="#2b62e0"></rect><rect x="118" y="38" width="4" height="22" fill="#2b62e0"></rect>
+          <rect x="20" y="16" width="34" height="14" rx="2" fill="#2a3b6e"></rect>
+          <rect x="74" y="12" width="36" height="18" rx="2" fill="#3a4c86"></rect>
+          <circle cx="0" cy="0" r="24" fill="#f4f8ff"></circle>
+          <rect x="-11" y="-9" width="7" height="14" rx="3.5" fill="#0b1433"></rect>
+          <rect x="4" y="-9" width="7" height="14" rx="3.5" fill="#0b1433"></rect>
+        </g>
+
+        <!-- left trading wall -->
+        <g transform="translate(26,250) skewY(-28)">
+          <rect x="0" y="0" width="104" height="120" rx="4" fill="#0c1a40" style="stroke: #23468f; stroke-width: 1.5"></rect>
+          <rect x="10" y="62" width="4" height="22" fill="#2fd18b"></rect><rect x="18" y="56" width="4" height="18" fill="#ff5a5f"></rect>
+          <rect x="26" y="50" width="4" height="24" fill="#2fd18b"></rect><rect x="34" y="40" width="4" height="22" fill="#2fd18b"></rect>
+          <rect x="42" y="44" width="4" height="12" fill="#ff5a5f"></rect><rect x="50" y="30" width="4" height="22" fill="#2fd18b"></rect>
+          <rect x="58" y="22" width="4" height="20" fill="#2fd18b"></rect><rect x="66" y="14" width="4" height="18" fill="#2fd18b"></rect>
+          <rect x="74" y="8" width="4" height="14" fill="#ff5a5f"></rect><rect x="82" y="4" width="4" height="16" fill="#2fd18b"></rect>
+          <g>
+            <rect x="8" y="92" width="10" height="7" fill="#ff5a5f"></rect><rect x="20" y="92" width="10" height="7" fill="#2fd18b"></rect><rect x="32" y="92" width="10" height="7" fill="#ff5a5f"></rect><rect x="44" y="92" width="10" height="7" fill="#3a6bd8"></rect><rect x="56" y="92" width="10" height="7" fill="#ff5a5f"></rect>
+            <rect x="8" y="102" width="10" height="7" fill="#3a6bd8"></rect><rect x="20" y="102" width="10" height="7" fill="#ff5a5f"></rect><rect x="32" y="102" width="10" height="7" fill="#2fd18b"></rect><rect x="44" y="102" width="10" height="7" fill="#ff5a5f"></rect><rect x="56" y="102" width="10" height="7" fill="#2fd18b"></rect>
+          </g>
+        </g>
+        <!-- holder kittens -->
+        <g transform="translate(150,282)">
+          <g><polygon points="0,-8 4,-16 8,-8" fill="#e8eef9"></polygon><polygon points="10,-8 14,-16 18,-8" fill="#e8eef9"></polygon><rect x="0" y="-9" width="18" height="16" rx="6" fill="#e8eef9"></rect><circle cx="6" cy="-2" r="1.6" fill="#0b1433"></circle><circle cx="12" cy="-2" r="1.6" fill="#0b1433"></circle></g>
+          <g transform="translate(26,0)"><polygon points="0,-8 4,-16 8,-8" fill="#f2a65a"></polygon><polygon points="10,-8 14,-16 18,-8" fill="#f2a65a"></polygon><rect x="0" y="-9" width="18" height="16" rx="6" fill="#f2a65a"></rect><circle cx="6" cy="-2" r="1.6" fill="#0b1433"></circle><circle cx="12" cy="-2" r="1.6" fill="#0b1433"></circle></g>
+          <g transform="translate(52,0)"><polygon points="0,-8 4,-16 8,-8" fill="#6fb6ff"></polygon><polygon points="10,-8 14,-16 18,-8" fill="#6fb6ff"></polygon><rect x="0" y="-9" width="18" height="16" rx="6" fill="#6fb6ff"></rect><circle cx="6" cy="-2" r="1.6" fill="#0b1433"></circle><circle cx="12" cy="-2" r="1.6" fill="#0b1433"></circle></g>
+          <rect x="80" y="-6" width="6" height="12" rx="2" fill="#c7d5f3"></rect>
+          <use href="#jj" transform="translate(16,26) scale(.5)"></use>
+          <rect x="-4" y="28" width="12" height="6" rx="2" fill="#c7d5f3"></rect>
+        </g>
+        <!-- paper hands shredder -->
+        <g transform="translate(40,392)">
+          <polygon points="0,20 30,0 110,0 80,20" fill="#1b2d5e"></polygon>
+          <rect x="0" y="20" width="80" height="80" fill="#0f1c42" style="stroke: #2a4a98; stroke-width: 1.5"></rect>
+          <polygon points="80,20 110,0 110,80 80,100" fill="#0b1636"></polygon>
+          <polyline points="22,12 28,2 34,12 40,2 46,12 52,2 58,12 64,2 70,12" style="fill: none; stroke: #f4e6a6; stroke-width: 2"></polyline>
+          <rect x="12" y="48" width="56" height="14" rx="2" fill="#dfe8ff"></rect>
+          <text x="40" y="58" style="font: 700 7px 'JetBrains Mono', monospace; fill: #0b1433; text-anchor: middle">PAPER HANDS</text>
+        </g>
+
+        <!-- ===== desks ===== -->
+        <!-- row 1 -->
+        <g transform="translate(340,300)">
+          <rect x="-56" y="-66" width="112" height="54" rx="5" fill="#0d1a3d" style="stroke: #2f5fd0; stroke-width: 1.5"></rect>
+          <polyline points="-46,-28 -34,-38 -24,-30 -12,-46 0,-36 12,-42 24,-32 36,-48 46,-40" style="fill: none; stroke: #4fb6ff; stroke-width: 2.5"></polyline>
+          <rect x="-4" y="-12" width="8" height="8" fill="#1d3470"></rect>
+          <polygon points="-76,-4 76,-4 86,12 -86,12" fill="#13224d" style="stroke: #2b4fa8; stroke-width: 1"></polygon>
+          <rect x="-82" y="12" width="5" height="34" fill="#2b62e0"></rect><rect x="77" y="12" width="5" height="34" fill="#2b62e0"></rect>
+          <circle cx="50" cy="-20" r="3" fill="#5fe0ff"></circle>
+          <text x="0" y="7" style="font: 600 7px 'JetBrains Mono', monospace; letter-spacing: 1px; fill: #8fb3ff; text-anchor: middle">SCANNER</text>
+          <ellipse cx="0" cy="62" rx="26" ry="5" fill="#2f8cff" style="opacity: .25"></ellipse>
+          <g transform="translate(0,38)">
+            <polygon points="22,0 12,5 15.6,15.6 5,12 0,22 -5,12 -15.6,15.6 -12,5 -22,0 -12,-5 -15.6,-15.6 -5,-12 0,-22 5,-12 15.6,-15.6 12,-5" fill="#3aa8ff"></polygon>
+            <ellipse cx="-5" cy="-1" rx="2.8" ry="4.2" fill="#ffffff"></ellipse><ellipse cx="5" cy="-1" rx="2.8" ry="4.2" fill="#ffffff"></ellipse>
+            <circle cx="-5" cy="0" r="1.4" fill="#0b1433"></circle><circle cx="5" cy="0" r="1.4" fill="#0b1433"></circle>
+          </g>
+        </g>
+        <g transform="translate(520,300)">
+          <rect x="-56" y="-66" width="112" height="54" rx="5" fill="#0d1a3d" style="stroke: #2f5fd0; stroke-width: 1.5"></rect>
+          <g fill="#4fb6ff"><rect x="-44" y="-34" width="5" height="16"></rect><rect x="-36" y="-40" width="5" height="22"></rect><rect x="-28" y="-30" width="5" height="12"></rect><rect x="-20" y="-44" width="5" height="26"></rect><rect x="-12" y="-36" width="5" height="18"></rect><rect x="-4" y="-48" width="5" height="30"></rect><rect x="4" y="-38" width="5" height="20"></rect><rect x="12" y="-42" width="5" height="24"></rect><rect x="20" y="-50" width="5" height="32"></rect><rect x="28" y="-40" width="5" height="22"></rect><rect x="36" y="-46" width="5" height="28"></rect></g>
+          <rect x="-4" y="-12" width="8" height="8" fill="#1d3470"></rect>
+          <polygon points="-76,-4 76,-4 86,12 -86,12" fill="#13224d" style="stroke: #2b4fa8; stroke-width: 1"></polygon>
+          <rect x="-82" y="12" width="5" height="34" fill="#2b62e0"></rect><rect x="77" y="12" width="5" height="34" fill="#2b62e0"></rect>
+          <circle cx="50" cy="-20" r="3" fill="#5fe0ff"></circle>
+          <text x="0" y="7" style="font: 600 7px 'JetBrains Mono', monospace; letter-spacing: 1px; fill: #8fb3ff; text-anchor: middle">FILLS</text>
+          <ellipse cx="0" cy="62" rx="26" ry="5" fill="#2f8cff" style="opacity: .25"></ellipse>
+          <g transform="translate(0,40)">
+            <circle cx="-10" cy="2" r="11" fill="#48b4f0"></circle><circle cx="0" cy="-6" r="13" fill="#48b4f0"></circle><circle cx="11" cy="2" r="11" fill="#48b4f0"></circle><rect x="-18" y="2" width="36" height="12" rx="6" fill="#48b4f0"></rect>
+            <ellipse cx="-5" cy="0" rx="2.8" ry="4.2" fill="#ffffff"></ellipse><ellipse cx="5" cy="0" rx="2.8" ry="4.2" fill="#ffffff"></ellipse>
+            <circle cx="-5" cy="1" r="1.4" fill="#0b1433"></circle><circle cx="5" cy="1" r="1.4" fill="#0b1433"></circle>
+          </g>
+        </g>
+        <g transform="translate(700,300)">
+          <rect x="-56" y="-66" width="112" height="54" rx="5" fill="#0d1a3d" style="stroke: #2f5fd0; stroke-width: 1.5"></rect>
+          <g fill="#6d86c4"><rect x="-44" y="-56" width="52" height="4"></rect><rect x="-44" y="-48" width="70" height="4"></rect><rect x="-44" y="-40" width="40" height="4"></rect><rect x="-44" y="-32" width="62" height="4"></rect><rect x="-44" y="-24" width="30" height="4"></rect></g>
+          <rect x="-4" y="-12" width="8" height="8" fill="#1d3470"></rect>
+          <polygon points="-76,-4 76,-4 86,12 -86,12" fill="#13224d" style="stroke: #2b4fa8; stroke-width: 1"></polygon>
+          <rect x="-82" y="12" width="5" height="34" fill="#2b62e0"></rect><rect x="77" y="12" width="5" height="34" fill="#2b62e0"></rect>
+          <circle cx="50" cy="-20" r="3" fill="#5fe0ff"></circle>
+          <text x="0" y="7" style="font: 600 7px 'JetBrains Mono', monospace; letter-spacing: 1px; fill: #8fb3ff; text-anchor: middle">ANALYST</text>
+          <ellipse cx="0" cy="62" rx="26" ry="5" fill="#ff5a52" style="opacity: .2"></ellipse>
+          <g transform="translate(0,40)">
+            <path d="M0 -18 L19 14 L-19 14 Z" fill="#ff4f4a" style="stroke: #ff4f4a; stroke-width: 7; stroke-linejoin: round"></path>
+            <ellipse cx="-5" cy="3" rx="2.8" ry="4.2" fill="#ffffff"></ellipse><ellipse cx="5" cy="3" rx="2.8" ry="4.2" fill="#ffffff"></ellipse>
+            <circle cx="-5" cy="4" r="1.4" fill="#0b1433"></circle><circle cx="5" cy="4" r="1.4" fill="#0b1433"></circle>
+          </g>
+        </g>
+        <!-- row 2 -->
+        <g transform="translate(340,428)">
+          <rect x="-56" y="-66" width="112" height="54" rx="5" fill="#0d1a3d" style="stroke: #2f5fd0; stroke-width: 1.5"></rect>
+          <path d="M-46 -20 L-34 -30 L-22 -24 L-10 -40 L2 -34 L14 -46 L26 -36 L38 -42 L46 -30 L46 -18 L-46 -18 Z" fill="#1f5fc8" style="opacity: .55"></path>
+          <polyline points="-46,-20 -34,-30 -22,-24 -10,-40 2,-34 14,-46 26,-36 38,-42 46,-30" style="fill: none; stroke: #6fc6ff; stroke-width: 2.5"></polyline>
+          <rect x="-4" y="-12" width="8" height="8" fill="#1d3470"></rect>
+          <polygon points="-76,-4 76,-4 86,12 -86,12" fill="#13224d" style="stroke: #2b4fa8; stroke-width: 1"></polygon>
+          <rect x="-82" y="12" width="5" height="34" fill="#2b62e0"></rect><rect x="77" y="12" width="5" height="34" fill="#2b62e0"></rect>
+          <circle cx="50" cy="-20" r="3" fill="#5fe0ff"></circle>
+          <text x="0" y="7" style="font: 600 7px 'JetBrains Mono', monospace; letter-spacing: 1px; fill: #8fb3ff; text-anchor: middle">SIZER</text>
+          <ellipse cx="0" cy="62" rx="26" ry="5" fill="#2f8cff" style="opacity: .25"></ellipse>
+          <g transform="translate(0,38)">
+            <circle cx="-20" cy="2" r="4" fill="#d6ecff"></circle><circle cx="20" cy="2" r="4" fill="#d6ecff"></circle>
+            <polygon points="0,-19 17,-9 17,11 0,21 -17,11 -17,-9" fill="#d6ecff" style="stroke: #d6ecff; stroke-width: 5; stroke-linejoin: round"></polygon>
+            <rect x="-10" y="20" width="7" height="5" rx="2" fill="#d6ecff"></rect><rect x="3" y="20" width="7" height="5" rx="2" fill="#d6ecff"></rect>
+            <ellipse cx="-5" cy="0" rx="2.6" ry="4" fill="#0b1433"></ellipse><ellipse cx="5" cy="0" rx="2.6" ry="4" fill="#0b1433"></ellipse>
+          </g>
+        </g>
+        <g transform="translate(520,428)">
+          <rect x="-56" y="-66" width="112" height="54" rx="5" fill="#0d1a3d" style="stroke: #2f5fd0; stroke-width: 1.5"></rect>
+          <g fill="#4fb6ff"><rect x="-44" y="-30" width="5" height="12"></rect><rect x="-36" y="-36" width="5" height="18"></rect><rect x="-28" y="-28" width="5" height="10"></rect><rect x="-20" y="-40" width="5" height="22"></rect><rect x="-12" y="-46" width="5" height="28"></rect><rect x="-4" y="-38" width="5" height="20"></rect><rect x="4" y="-50" width="5" height="32"></rect><rect x="12" y="-44" width="5" height="26"></rect><rect x="20" y="-52" width="5" height="34"></rect><rect x="28" y="-40" width="5" height="22"></rect><rect x="36" y="-48" width="5" height="30"></rect></g>
+          <rect x="-4" y="-12" width="8" height="8" fill="#1d3470"></rect>
+          <polygon points="-76,-4 76,-4 86,12 -86,12" fill="#13224d" style="stroke: #2b4fa8; stroke-width: 1"></polygon>
+          <rect x="-82" y="12" width="5" height="34" fill="#2b62e0"></rect><rect x="77" y="12" width="5" height="34" fill="#2b62e0"></rect>
+          <circle cx="50" cy="-20" r="3" fill="#5fe0ff"></circle>
+          <text x="0" y="7" style="font: 600 7px 'JetBrains Mono', monospace; letter-spacing: 1px; fill: #8fb3ff; text-anchor: middle">SOCIAL</text>
+          <ellipse cx="0" cy="62" rx="26" ry="5" fill="#ff8fbf" style="opacity: .2"></ellipse>
+          <g transform="translate(0,40)">
+            <path d="M0 15 C -28 -2 -15 -24 0 -10 C 15 -24 28 -2 0 15 Z" fill="#ff8fbf"></path>
+            <ellipse cx="-5" cy="-3" rx="2.6" ry="4" fill="#5a1630"></ellipse><ellipse cx="5" cy="-3" rx="2.6" ry="4" fill="#5a1630"></ellipse>
+          </g>
+        </g>
+        <g transform="translate(700,428)">
+          <rect x="-56" y="-66" width="112" height="54" rx="5" fill="#0d1a3d" style="stroke: #2f5fd0; stroke-width: 1.5"></rect>
+          <g fill="#6d86c4"><rect x="-44" y="-56" width="40" height="4"></rect><rect x="-44" y="-48" width="30" height="4"></rect><rect x="-44" y="-40" width="36" height="4"></rect><rect x="-44" y="-32" width="24" height="4"></rect></g>
+          <rect x="10" y="-56" width="34" height="34" rx="3" fill="#1b3a8a"></rect><rect x="20" y="-50" width="14" height="22" fill="#4fb6ff"></rect>
+          <rect x="-4" y="-12" width="8" height="8" fill="#1d3470"></rect>
+          <polygon points="-76,-4 76,-4 86,12 -86,12" fill="#13224d" style="stroke: #2b4fa8; stroke-width: 1"></polygon>
+          <rect x="-82" y="12" width="5" height="34" fill="#2b62e0"></rect><rect x="77" y="12" width="5" height="34" fill="#2b62e0"></rect>
+          <circle cx="50" cy="-20" r="3" fill="#5fe0ff"></circle>
+          <text x="0" y="7" style="font: 600 7px 'JetBrains Mono', monospace; letter-spacing: 1px; fill: #8fb3ff; text-anchor: middle">RISK</text>
+          <ellipse cx="0" cy="62" rx="26" ry="5" fill="#ff8a3d" style="opacity: .2"></ellipse>
+          <g transform="translate(0,40)">
+            <circle cx="-15" cy="-12" r="5" fill="#ff8a3d"></circle><circle cx="15" cy="-12" r="5" fill="#ff8a3d"></circle>
+            <circle cx="0" cy="0" r="17" fill="#ff8a3d"></circle>
+            <ellipse cx="-5" cy="-1" rx="2.6" ry="4" fill="#3a1606"></ellipse><ellipse cx="5" cy="-1" rx="2.6" ry="4" fill="#3a1606"></ellipse>
+          </g>
+        </g>
+
+        <!-- lounge -->
+        <g transform="translate(520,560)">
+          <rect x="-120" y="-30" width="240" height="22" rx="6" fill="#16285a" style="stroke: #2b4fa8; stroke-width: 1"></rect>
+          <rect x="-120" y="-10" width="240" height="22" rx="5" fill="#1b3170"></rect>
+          <line x1="-40" y1="-30" x2="-40" y2="12" style="stroke: #0f1d45; stroke-width: 2"></line><line x1="40" y1="-30" x2="40" y2="12" style="stroke: #0f1d45; stroke-width: 2"></line>
+          <rect x="-134" y="-24" width="16" height="36" rx="5" fill="#16285a"></rect><rect x="118" y="-24" width="16" height="36" rx="5" fill="#16285a"></rect>
+          <rect x="-50" y="18" width="100" height="16" rx="3" fill="#0f1c42" style="stroke: #2b4fa8; stroke-width: 1"></rect>
+          <use href="#jj" transform="translate(-8,20) scale(.38)"></use>
+          <g transform="translate(-34,4)"><ellipse cx="0" cy="-10" rx="3" ry="9" fill="#2e8f5a" transform="rotate(-30)"></ellipse><ellipse cx="0" cy="-10" rx="3" ry="9" fill="#3fb06e" transform="rotate(30)"></ellipse><rect x="-5" y="-2" width="10" height="9" rx="2" fill="#2a3b6e"></rect></g>
+        </g>
+        <g transform="translate(372,548)"><ellipse cx="0" cy="-22" rx="4" ry="16" fill="#2e8f5a" transform="rotate(-35)"></ellipse><ellipse cx="0" cy="-22" rx="4" ry="16" fill="#3fb06e" transform="rotate(35)"></ellipse><ellipse cx="0" cy="-24" rx="4" ry="16" fill="#46c27a"></ellipse><ellipse cx="0" cy="-18" rx="3.5" ry="14" fill="#2e8f5a" transform="rotate(-70)"></ellipse><ellipse cx="0" cy="-18" rx="3.5" ry="14" fill="#2e8f5a" transform="rotate(70)"></ellipse><polygon points="-12,-6 12,-6 9,16 -9,16" fill="#22325f"></polygon></g>
+        <g transform="translate(668,548)"><ellipse cx="0" cy="-22" rx="4" ry="16" fill="#2e8f5a" transform="rotate(-35)"></ellipse><ellipse cx="0" cy="-22" rx="4" ry="16" fill="#3fb06e" transform="rotate(35)"></ellipse><ellipse cx="0" cy="-24" rx="4" ry="16" fill="#46c27a"></ellipse><ellipse cx="0" cy="-18" rx="3.5" ry="14" fill="#2e8f5a" transform="rotate(-70)"></ellipse><ellipse cx="0" cy="-18" rx="3.5" ry="14" fill="#2e8f5a" transform="rotate(70)"></ellipse><polygon points="-12,-6 12,-6 9,16 -9,16" fill="#22325f"></polygon></g>
+
+        <!-- top runner trophy -->
+        <g transform="translate(878,300)">
+          <ellipse cx="0" cy="32" rx="30" ry="7" fill="#13224d" style="stroke: #2b4fa8; stroke-width: 1"></ellipse>
+          <path d="M0 -42 C 12 -28 13 -6 9 18 L -9 18 C -13 -6 -12 -28 0 -42 Z" fill="#e6eeff"></path>
+          <circle cx="0" cy="-14" r="5" fill="#4fb6ff"></circle>
+          <path d="M-9 6 L-18 24 L-8 18 Z" fill="#9fb3e0"></path><path d="M9 6 L18 24 L8 18 Z" fill="#9fb3e0"></path>
+          <path d="M-5 18 L0 30 L5 18 Z" fill="#ff8a3d"></path>
+          <text x="0" y="54" style="font: 600 7px 'JetBrains Mono', monospace; letter-spacing: 1px; fill: #8fb3ff; text-anchor: middle">TOP RUNNER</text>
+        </g>
+        <!-- whale radar -->
+        <g transform="translate(878,450)">
+          <rect x="-3" y="14" width="6" height="34" fill="#2a3b6e"></rect>
+          <ellipse cx="0" cy="50" rx="22" ry="5" fill="#13224d"></ellipse>
+          <path d="M-30 -10 A 34 34 0 0 0 26 22 Z" fill="#c9d6f3" transform="rotate(-20)"></path>
+          <line x1="-4" y1="2" x2="14" y2="-18" style="stroke: #c9d6f3; stroke-width: 2"></line><circle cx="14" cy="-18" r="3" fill="#5fe0ff"></circle>
+          <path d="M22 -26 A 12 12 0 0 1 30 -12 M27 -33 A 20 20 0 0 1 38 -10" style="fill: none; stroke: #5fe0ff; stroke-width: 2; stroke-linecap: round"></path>
+          <text x="0" y="68" style="font: 600 7px 'JetBrains Mono', monospace; letter-spacing: 1px; fill: #8fb3ff; text-anchor: middle">WHALE RADAR</text>
+        </g>
+      </svg>
+    </section>
+
+    <!-- bottom row -->
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; flex: 1">
+
+      <!-- FEED -->
+      <section aria-label="Feed des bots" style="flex: 1.3 1 320px; min-width: 0; background: #0a1431; border-radius: 22px; padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; box-shadow: 0 0 0 1px rgba(120,180,255,.18) inset">
+        <div style="display: flex; justify-content: flex-end; gap: 8px">
+          <button aria-label="Rechercher" style="width: 44px; height: 44px; border-radius: 50%; border: 0; background: #1a2b5c; color: #dfe8ff; display: grid; place-items: center"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" style="fill: none; stroke: currentColor; stroke-width: 2"></circle><path d="M11 11 L14.5 14.5" style="stroke: currentColor; stroke-width: 2; stroke-linecap: round"></path></svg></button>
+          <button aria-label="Nouveau bot" style="width: 44px; height: 44px; border-radius: 50%; border: 0; background: #1a2b5c; color: #dfe8ff; display: grid; place-items: center"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2 V14 M2 8 H14" style="stroke: currentColor; stroke-width: 2; stroke-linecap: round"></path></svg></button>
+        </div>
+
+        <div style="display: flex; gap: 12px; align-items: center; padding: 8px 6px">
+          <svg width="38" height="38" viewBox="-22 -22 44 44" aria-hidden="true" style="flex: none"><polygon points="0,-17 15,-8 15,9 0,18 -15,9 -15,-8" fill="#d6ecff" style="stroke: #d6ecff; stroke-width: 5; stroke-linejoin: round"></polygon><ellipse cx="-5" cy="0" rx="2.4" ry="3.8" fill="#0b1433"></ellipse><ellipse cx="5" cy="0" rx="2.4" ry="3.8" fill="#0b1433"></ellipse></svg>
+          <div style="flex: 1; min-width: 0"><div style="font-size: 14px; font-weight: 700; color: #f2f6ff">Sizer</div><div style="font-size: 13px; color: #c9d6f7">85% of the bank. $1,750 at $158.8K.</div></div>
+          <span style="width: 8px; height: 8px; border-radius: 50%; background: #3fc8f0"></span>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: center; padding: 8px 6px">
+          <svg width="38" height="38" viewBox="-22 -22 44 44" aria-hidden="true" style="flex: none"><path d="M0 15 C -28 -2 -15 -24 0 -10 C 15 -24 28 -2 0 15 Z" fill="#ff8fbf"></path><ellipse cx="-5" cy="-3" rx="2.4" ry="3.8" fill="#5a1630"></ellipse><ellipse cx="5" cy="-3" rx="2.4" ry="3.8" fill="#5a1630"></ellipse></svg>
+          <div style="flex: 1; min-width: 0"><div style="font-size: 14px; font-weight: 700; color: #f2f6ff">Social</div><div style="font-size: 13px; color: #c9d6f7">700 holders, theses bullish. Crowd is early.</div></div>
+          <span style="width: 8px; height: 8px; border-radius: 50%; background: #3fc8f0"></span>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: center; padding: 8px 6px">
+          <svg width="38" height="38" viewBox="-22 -22 44 44" aria-hidden="true" style="flex: none"><path d="M0 -15 L16 12 L-16 12 Z" fill="#ff4f4a" style="stroke: #ff4f4a; stroke-width: 6; stroke-linejoin: round"></path><ellipse cx="-5" cy="3" rx="2.4" ry="3.8" fill="#ffffff"></ellipse><ellipse cx="5" cy="3" rx="2.4" ry="3.8" fill="#ffffff"></ellipse></svg>
+          <div style="flex: 1; min-width: 0"><div style="font-size: 14px; font-weight: 700; color: #f2f6ff">Analyst</div><div style="font-size: 13px; color: #c9d6f7">Dev sold zero. Top 10 hold 14%. Clean.</div></div>
+          <span style="width: 8px; height: 8px; border-radius: 50%; background: #3fc8f0"></span>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: center; padding: 8px 6px">
+          <svg width="38" height="38" viewBox="-24 -24 48 48" aria-hidden="true" style="flex: none"><polygon points="22,0 12,5 15.6,15.6 5,12 0,22 -5,12 -15.6,15.6 -12,5 -22,0 -12,-5 -15.6,-15.6 -5,-12 0,-22 5,-12 15.6,-15.6 12,-5" fill="#3aa8ff"></polygon><ellipse cx="-5" cy="-1" rx="2.6" ry="4" fill="#ffffff"></ellipse><ellipse cx="5" cy="-1" rx="2.6" ry="4" fill="#ffffff"></ellipse></svg>
+          <div style="flex: 1; min-width: 0"><div style="font-size: 14px; font-weight: 700; color: #f2f6ff">Scanner</div><div style="font-size: 13px; color: #c9d6f7">140 pools scanned. GTA is 24 min old. Clears every gate.</div></div>
+          <span style="width: 8px; height: 8px; border-radius: 50%; background: #3fc8f0"></span>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: center; padding: 8px 6px; background: #17295a; border-radius: 12px">
+          <svg width="38" height="38" viewBox="-22 -22 44 44" aria-hidden="true" style="flex: none"><circle cx="0" cy="0" r="18" fill="#f4f8ff"></circle><rect x="-8" y="-7" width="5.5" height="11" rx="2.75" fill="#0b1433"></rect><rect x="2.5" y="-7" width="5.5" height="11" rx="2.75" fill="#0b1433"></rect></svg>
+          <div style="flex: 1; min-width: 0"><div style="font-size: 14px; font-weight: 700; color: #f2f6ff">Grok Bot</div><div style="font-size: 13px; color: #dfe8ff">Night 2. Bank $2,061.47. Find me one coin.</div></div>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: center; padding: 8px 6px">
+          <svg width="38" height="38" viewBox="-22 -22 44 44" aria-hidden="true" style="flex: none"><circle cx="-9" cy="3" r="9" fill="#48b4f0"></circle><circle cx="0" cy="-5" r="11" fill="#48b4f0"></circle><circle cx="9" cy="3" r="9" fill="#48b4f0"></circle><rect x="-16" y="3" width="32" height="10" rx="5" fill="#48b4f0"></rect><ellipse cx="-4.5" cy="0" rx="2.4" ry="3.8" fill="#ffffff"></ellipse><ellipse cx="4.5" cy="0" rx="2.4" ry="3.8" fill="#ffffff"></ellipse></svg>
+          <div style="flex: 1; min-width: 0"><div style="font-size: 14px; font-weight: 700; color: #f2f6ff">Fills</div><div style="font-size: 13px; color: #c9d6f7">Router warm.</div></div>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: center; padding: 8px 6px">
+          <svg width="38" height="38" viewBox="-22 -22 44 44" aria-hidden="true" style="flex: none"><circle cx="-13" cy="-11" r="4.5" fill="#ff8a3d"></circle><circle cx="13" cy="-11" r="4.5" fill="#ff8a3d"></circle><circle cx="0" cy="0" r="16" fill="#ff8a3d"></circle><ellipse cx="-5" cy="-1" rx="2.4" ry="3.8" fill="#3a1606"></ellipse><ellipse cx="5" cy="-1" rx="2.4" ry="3.8" fill="#3a1606"></ellipse></svg>
+          <div style="flex: 1; min-width: 0"><div style="font-size: 14px; font-weight: 700; color: #f2f6ff">Risk</div><div style="font-size: 13px; color: #c9d6f7">Stops armed.</div></div>
+        </div>
+      </section>
+
+      <!-- JEV ANALYSIS -->
+      <section aria-label="JEV analysis" style="flex: 1 1 270px; min-width: 0; background: #070f28; border-radius: 22px; padding: 14px; display: flex; flex-direction: column; gap: 10px; font-family: 'JetBrains Mono', monospace; box-shadow: 0 0 0 1px rgba(120,180,255,.18) inset">
+        <div style="display: flex; justify-content: space-between; align-items: baseline">
+          <span style="font-size: 13px; font-weight: 700; letter-spacing: 1.5px; color: #e6eeff">JEV · ANALYSIS</span>
+          <span style="font-size: 10px; font-weight: 700; letter-spacing: 1px; color: #8fa6dc">130 SCANNED</span>
+        </div>
+        <div style="display: flex; gap: 10px; font-size: 9px; color: #8fa6dc; border-bottom: 1px solid #16285a; padding-bottom: 6px; overflow-x: auto; white-space: nowrap">
+          <span style="color: #e6eeff; font-weight: 700">● COIL</span><span>LIQ $18.2K</span><span>MC $64K</span><span>VOL $142K</span><span style="color: #34c98a">+212%</span><span>11m</span>
+        </div>
+        <div style="position: relative; height: 170px; border-radius: 8px; background: #0a1534; overflow: hidden">
+          <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 40%; display: flex; align-items: flex-end; gap: 1px; padding: 0 4px">
+            <sc-for list="{{vol}}" as="v" hint-placeholder-count="40">
+              <div style="flex: 1; height: {{v.h}}%; background: #2f6fd6; opacity: .7"></div>
+            </sc-for>
+          </div>
+          <svg viewBox="0 0 300 100" preserveAspectRatio="none" style="position: absolute; inset: 6px 4px 30% 4px; width: calc(100% - 8px); height: 62%" aria-hidden="true">
+            <polyline points="{{jevPoints}}" style="fill: none; stroke: #8ad8ff; stroke-width: 1.6; vector-effect: non-scaling-stroke"></polyline>
+          </svg>
+          <div style="position: absolute; top: 8px; right: 8px; background: rgba(7,15,40,.92); border: 1px solid #1d3570; border-radius: 6px; padding: 6px 8px; font-size: 9px; display: grid; grid-template-columns: auto auto; column-gap: 10px; row-gap: 3px">
+            <span style="color: #e6eeff">liquidity depth</span><span style="color: #34c98a; font-weight: 700">PASS</span>
+            <span style="color: #e6eeff">holder spread</span><span style="color: #34c98a; font-weight: 700">PASS</span>
+            <span style="color: #7f93c4">volume vs mcap</span><span style="color: #7f93c4">···</span>
+            <span style="color: #7f93c4">rug signature</span><span style="color: #7f93c4">···</span>
+            <span style="color: #7f93c4">fresh wallets</span><span style="color: #7f93c4">···</span>
+            <span style="color: #7f93c4">entry window</span><span style="color: #7f93c4">···</span>
+          </div>
+          <div style="position: absolute; left: 8px; bottom: 6px; font-size: 9px; font-weight: 700; color: #e6eeff">● COIL</div>
+        </div>
+        <div style="overflow-x: auto">
+          <table style="width: 100%; border-collapse: collapse; font-size: 10px">
+            <tbody>
+              <tr style="background: #13244f"><td style="padding: 4px 6px; color: #e6eeff; font-weight: 700">COIL</td><td style="padding: 4px 6px; color: #c9d6f7">all gates</td><td style="padding: 4px 6px; color: #34c98a; font-weight: 700">PASS</td><td style="padding: 4px 6px; color: #8fa6dc; text-align: right">11m</td></tr>
+              <tr><td style="padding: 4px 6px; color: #c9d6f7">MENUS</td><td style="padding: 4px 6px; color: #8fa6dc">min_mcap_usd</td><td style="padding: 4px 6px; color: #ff7a7a">DROP</td><td style="padding: 4px 6px; color: #8fa6dc; text-align: right">27m</td></tr>
+              <tr><td style="padding: 4px 6px; color: #c9d6f7">MILKBOO</td><td style="padding: 4px 6px; color: #8fa6dc">min_age_minutes</td><td style="padding: 4px 6px; color: #ff7a7a">DROP</td><td style="padding: 4px 6px; color: #8fa6dc; text-align: right">4m</td></tr>
+              <tr><td style="padding: 4px 6px; color: #c9d6f7">MAYA</td><td style="padding: 4px 6px; color: #8fa6dc">min_mcap_usd</td><td style="padding: 4px 6px; color: #ff7a7a">DROP</td><td style="padding: 4px 6px; color: #8fa6dc; text-align: right">41m</td></tr>
+              <tr><td style="padding: 4px 6px; color: #c9d6f7">Hercules</td><td style="padding: 4px 6px; color: #8fa6dc">min_volume_h24</td><td style="padding: 4px 6px; color: #ff7a7a">DROP</td><td style="padding: 4px 6px; color: #8fa6dc; text-align: right">1h</td></tr>
+              <tr><td style="padding: 4px 6px; color: #c9d6f7">Marvin</td><td style="padding: 4px 6px; color: #8fa6dc">min_mcap_usd</td><td style="padding: 4px 6px; color: #ff7a7a">DROP</td><td style="padding: 4px 6px; color: #8fa6dc; text-align: right">2h</td></tr>
+              <tr><td style="padding: 4px 6px; color: #c9d6f7">BILLIONS</td><td style="padding: 4px 6px; color: #8fa6dc">min_age_minutes</td><td style="padding: 4px 6px; color: #ff7a7a">DROP</td><td style="padding: 4px 6px; color: #8fa6dc; text-align: right">6m</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- thresholds.py -->
+      <section aria-label="thresholds.py" style="flex: 1 1 260px; min-width: 0; background: #070f28; border-radius: 22px; padding: 14px; display: flex; flex-direction: column; gap: 10px; font-family: 'JetBrains Mono', monospace; box-shadow: 0 0 0 1px rgba(120,180,255,.18) inset">
+        <div style="display: flex; justify-content: space-between; align-items: center">
+          <span style="font-size: 13px; font-weight: 700; color: #e6eeff">thresholds.py</span>
+          <span style="font-size: 9px; color: #8fa6dc">Saved ✓</span>
+        </div>
+        <div style="overflow-x: auto; font-size: 10.5px; line-height: 1.75; white-space: pre; color: #c9d6f7"><span style="color: #e6eeff; font-weight: 700">HARD</span><span style="color: #6d86c4">  # automatic, bot can't override</span>
+<span style="color: #9fd4ff">  min_age_minutes   </span>   <span style="color: #ffd27a">15</span>
+<span style="color: #9fd4ff">  min_liquidity_usd </span>   <span style="color: #ffd27a">12_000</span>
+<span style="color: #9fd4ff">  min_volume_h24    </span>   <span style="color: #ffd27a">40_000</span>
+<span style="color: #9fd4ff">  min_mcap_usd      </span>   <span style="color: #ffd27a">40_000</span>
+<span style="color: #9fd4ff">  min_trades_h24    </span>   <span style="color: #ffd27a">150</span>
+<span style="color: #9fd4ff">  max_top_wallet    </span>   <span style="color: #ffd27a">0.05</span>
+<span style="color: #9fd4ff">  max_top_10        </span>   <span style="color: #ffd27a">0.40</span>
+<span style="color: #6d86c4">}</span>
+<span style="color: #e6eeff; font-weight: 700">SOFT</span><span style="color: #6d86c4">  # applied to bot's weight</span>
+<span style="color: #9fd4ff">  concentration_is_exit_risk</span>  max <span style="color: #ffd27a">0.55</span>
+<span style="color: #9fd4ff">  momentum_already_spent    </span>  max <span style="color: #ffd27a">0.60</span>
+<span style="color: #9fd4ff">  liquidity_fits_ticket     </span>  min <span style="color: #ffd27a">0.60</span>
+<span style="color: #9fd4ff">  dev_still_loaded          </span>  max <span style="color: #ffd27a">0.55</span>
+<span style="color: #6d86c4">}</span></div>
+        <div style="flex: 1"></div>
+        <div style="font-size: 9px; letter-spacing: 1px; color: #8fa6dc">filter.py · THE ORDER IS THE WHOLE POINT</div>
+        <div style="display: flex; gap: 6px; flex-wrap: wrap">
+          <span style="font-size: 9px; padding: 4px 8px; border-radius: 6px; border: 1px solid #3fc8f0; color: #9fe6ff">hard_kill</span>
+          <span style="font-size: 9px; padding: 4px 8px; border-radius: 6px; background: #2f6fd6; color: #ffffff">soft_score</span>
+          <span style="font-size: 9px; padding: 4px 8px; border-radius: 6px; border: 1px solid #1d3570; color: #8fa6dc">whale_veto</span>
+          <span style="font-size: 9px; padding: 4px 8px; border-radius: 6px; border: 1px solid #1d3570; color: #8fa6dc">size</span>
+          <span style="font-size: 9px; padding: 4px 8px; border-radius: 6px; border: 1px solid #1d3570; color: #8fa6dc">route</span>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1000}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { tf: 'LIVE', tab: 'Holders (7)', following: false };
+  }
+  renderVals() {
+    const C = [[20,92,96,18],[92,118,124,88],[118,112,126,104],[112,131,135,108],[131,124,136,119],[124,140,144,121],[140,151,157,136],[151,143,154,138],[143,136,146,130],[136,129,139,124],[129,141,144,126],[141,134,145,130],[134,147,150,131],[147,139,151,135],[139,152,156,137],[152,160,166,149],[160,153,163,148],[153,168,171,150],[168,181,186,165],[181,194,201,178],[194,186,197,180],[186,178,190,174],[178,172.4,181,169]];
+    const max = 210, x0 = 30, step = 3;
+    const candles = C.map(([o, c, h, l], i) => {
+      const top = Math.max(o, c), bot = Math.min(o, c), left = x0 + i * step;
+      return {
+        l: left.toFixed(2), wl: (left + 0.9).toFixed(2),
+        t: ((1 - top / max) * 100).toFixed(2), h: Math.max(0.7, (top - bot) / max * 100).toFixed(2),
+        wt: ((1 - h / max) * 100).toFixed(2), wh: ((h - l) / max * 100).toFixed(2),
+        color: c >= o ? '#2fd18b' : '#ff5a5f'
+      };
+    });
+    const tfs = ['LIVE', '1H', '4H', 'ALL'].map((label) => {
+      const on = this.state.tf === label;
+      return { label, on, live: label === 'LIVE', weight: on ? 700 : 500, color: on ? '#f2f6ff' : '#8fa6dc', pick: () => this.setState({ tf: label }) };
+    });
+    const tabs = ['Holders (7)', 'Feed', 'About'].map((label) => {
+      const on = this.state.tab === label;
+      return { label, on, weight: on ? 700 : 500, color: on ? '#dce6ff' : '#7f93c4', bar: on ? 'inset 0 -3px 0 #3f8cff' : 'none', pick: () => this.setState({ tab: label }) };
+    });
+    const pts = [];
+    for (let i = 0; i < 64; i++) {
+      let v = 18 + 5 * Math.sin(i * 0.9) + 3 * Math.sin(i * 2.3);
+      if (i > 18) v += (i - 18) * 1.5;
+      if (i > 34) v += 16 + 6 * Math.sin(i * 1.7);
+      if (i > 46) v -= (i - 46) * 2;
+      pts.push(Math.max(4, Math.min(96, v)));
+    }
+    const jevPoints = pts.map((v, i) => (i * 300 / 63).toFixed(1) + ',' + (100 - v).toFixed(1)).join(' ');
+    const vol = pts.map((v, i) => ({ h: Math.min(100, 12 + Math.abs(v - (pts[i - 1] ?? v)) * 9 + (i % 7 === 0 ? 30 : 0)).toFixed(0) }));
+    const f = this.state.following;
+    return {
+      candles, tfs, tabs, jevPoints, vol,
+      tabHolders: this.state.tab === 'Holders (7)', tabFeed: this.state.tab === 'Feed', tabAbout: this.state.tab === 'About',
+      following: f, followTrack: f ? '#3f8cff' : '#24346a', followKnob: f ? 21 : 3,
+      toggleFollow: () => this.setState({ following: !f })
+    };
+  }
+}
+</script>
+</body>
+</html>
